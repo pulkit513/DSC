@@ -1,0 +1,284 @@
+*{
+	margin:0;
+	padding:0;
+	
+}
+#container
+{
+	height:100%;
+	width:100%;
+	background:linear-gradient(to right,#009688,#6A1B9A);
+}
+#topbar
+{
+	height:15%;
+	width:100%;
+	background-color: #4A148C;
+}
+#main_label
+{   
+	position:absolute;
+	color:white;
+	font-family:monospace;
+	font-size: 40px;
+	float:left;
+	top:25px;
+	left:10px;
+}
+#leftbar
+{   
+    
+	float:left;
+	width:20%;
+	height:85%;
+	background-color: #6A1B9A;
+}
+#rightbar
+{   
+	float:right;
+	width:20%;
+	height:85%;
+	background-color:#6A1B9A;
+}
+#workspace
+{  
+	
+	margin-top:100px;
+	width:45%;
+	height:70%;
+	margin-left:110px;
+	background-color:#7C4DFF;
+	margin-top:10px;
+	float:left;
+}
+#login_tab
+{
+	float:left;
+	height:10%;
+	width:50%;
+	background-color:#BA68C8;
+	transition: 0.2s ease all;
+}
+#login_tab:hover
+{
+cursor:pointer;
+}
+#register_tab:hover
+{
+cursor:pointer;
+}
+
+#register_tab
+{
+	float:right;
+	height:10%;
+	width:50%;
+	background-color:#651FFF;
+	transition: 0.2s ease all;
+}
+#login_label
+{
+	font-size: 40px;
+	font-family: Arial;
+	margin-left:70px;
+	color:#DD2C00;
+	pointer-events: none;
+}
+#register_label
+{
+	font-size: 40px;
+	font-family: Arial;
+	margin-left:70px;
+	color:#00C853;
+	pointer-events: none;
+}
+#login_frame
+{   
+
+	position:relative;
+	margin-top:80px;
+	margin-left:60px;
+	height:80%;
+	width:80%;
+	background-color:#7C4DFF;
+	display:none;
+}
+#username
+{   
+	position:relative;
+	outline:none;
+	border:none;
+	width:100%;
+	height:30px; 
+}
+#input_user
+{   
+	margin-left:20px; 
+	margin-top:30px;
+	width:80%;
+	height:50px;
+	outline: none;
+	border:none;
+	font-size: 20px;
+	border-bottom: 1px solid violet;
+	transition:0.2s ease all;
+	color:#00C853;
+	background-color:#7C4DFF;
+
+}
+#label_user
+{    
+	position:relative;
+	top:-40px;
+	font-family: monospace;
+	font-size:30px;
+	margin-right:100px;
+	left:30px; 
+	transition:0.2s ease all; 
+	pointer-events:none;
+	color:#1B5E20;
+}
+#input_pass
+{   
+	margin-left:20px; 
+	margin-top:80px;
+	width:80%;
+	height:50px;
+	outline: none;
+	border:none;
+	border-bottom: 1px solid violet;
+	transition:0.2s ease all;
+	font-size: 20px;
+	color: #00C853;
+	background-color:#7C4DFF;
+}
+#label_pass
+{    
+	position:relative;
+	top:-40px;
+	font-family: monospace;
+	font-size:30px;
+	margin-right:100px;
+	left:30px;  
+	transition:0.2s ease all;
+	pointer-events:none;
+	color:#1B5E20;
+}
+#input_user:focus + #label_user ,#input_user:valid + #label_user
+{
+	font-size: 20px;
+	top: -60px;
+}
+#input_pass:focus + #label_pass ,#input_pass:valid + #label_pass
+{
+	font-size: 20px;
+	top: -60px;
+}
+#input_user:focus
+{
+	border-bottom: 5px solid violet;
+}
+#input_pass:focus
+{
+	border-bottom: 5px solid violet;
+}
+#submit_btn
+{   
+	margin-top:30px;
+	margin-left: 150px;
+	width:250px;
+	height:50px;
+	background-color:#B39DDB;
+	border:none;
+	outline: none;
+	font-family: arial ;
+	font-size: 40px;
+	transition:0.5s ease all; 
+}
+#submit_btn:hover
+{
+  background-color:#5E35B1;
+  cursor:pointer;
+}
+#forgot
+{
+	position: relative;
+	font-size: 40px;
+	top: 50px;
+	left:150px;
+	font-family: monotype corsiva;
+	transition: 0.2s ease all;
+}
+#forgot:hover
+{
+	cursor:pointer;
+}
+#name_div
+{   
+	position: absolute;
+	top: 220px;
+}
+#email_div
+{
+	position: absolute;
+	top: 300px;
+}
+#password_div
+{   
+	position: absolute;
+	top: 350px;
+}
+#register_btn
+{
+	position:absolute;
+	top:500px;
+	width:250px;
+	height:50px;
+	background-color:#B39DDB;
+	border:none;
+	outline: none;
+	font-family: arial ;
+	font-size: 40px;
+	transition:0.5s ease all; 
+	margin-left: -120px;
+
+}
+#register_btn:hover
+{ 
+	position: absolute;
+  background-color:#5E35B1;
+  cursor:pointer;
+}
+#register_frame
+{
+	display:block;
+
+}
+.inputs
+{
+	width:35%;
+	height:50px;
+	font-size: 20px;
+	border-bottom: 1px solid violet;
+	transition:0.2s ease all;
+	color:#00C853;
+	background-color:#7C4DFF;
+}
+#input_lastname
+{
+	float:right;
+	width:200px;
+}
+#label_lastname
+{
+	position:absolute;
+	left:300px;	
+}
+#label_firstname
+{
+	position:absolute;
+	left:30px;
+}
+
+
+

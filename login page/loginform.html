@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>LOGIN</title>
+	<link rel="stylesheet" href="lgnstyle.css" type="text/css">
+</head>
+<body>
+	<div id="container">
+		<div id="topbar">
+			<label id="main_label">GOSSIP</label>
+		</div>
+		<div id="leftbar"></div>
+		<div id="rightbar"></div><br><br>
+		<div id="workspace">
+			<div id="login_tab">
+				<label id="login_label">LOGIN</label>
+			</div>
+			<div id="register_tab">
+				<label id="register_label">REGISTER</label>
+			</div>
+			<div id="login_frame">
+				<div class="credentials">
+					   <div id="username">
+							<input id="input_user" required>				       
+							<label for="username" id="label_user">USERNAME</label>
+						</div>
+					  
+
+				</div>
+				<input type="submit" value="SUBMIT" id="submit_btn"><br>
+				<label id="forgot">forgot password?</label>
+			</div>
+			<div id="register_frame">
+				<div id="name_div">
+					<input id="input_firstname" class="inputs" required>
+					<label for="input_firstname" id="label_firstname" class="labels">FirstName</label>
+					
+						<input id="input_lastname" required class="inputs">
+						<label for="input_lastname" id="label_lastname" class="labels">LastName</label>
+				    
+				</div>
+				
+				<input type="submit" id="register_btn" value="REGISTER">
+ 
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		document.getElementById("login_tab").addEventListener('click',loginvisible);
+		document.getElementById("register_tab").addEventListener('click',registervisible);
+		function loginvisible()
+		{
+			document.getElementById("login_frame").style.display="block";
+			document.getElementById("register_frame").style.display="none";
+		}
+		function registervisible()
+		{
+			document.getElementById("login_frame").style.display="none";
+			document.getElementById("register_frame").style.display="block";
+		}
+</script>
+</body>

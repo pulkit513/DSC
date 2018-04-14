@@ -1,0 +1,104 @@
+<html>
+<head>
+	<title>LOGIN</title>
+	<link rel="stylesheet" href="version2css.css" type="text/css">
+</head>
+<body>
+	<div id="container">
+		<div class="modal" >
+		<div class="modalcontent" id="popup">
+			        <span id='close' >X</span>
+
+                   
+                   	   <div class="security">
+                   	   	<label id="securityqustn_label">Which is your favourite city?</label>
+                   	   	    <form action="forgot.php" method="post">
+					             <input type="text" id="input_answer" required><br><br>
+					        
+                              
+					      <label for="input_answer" id="securityanswer_label">Enter Answer</label>
+					      <input type="submit" value="SUBMIT" id="forgotpass_input" >
+ 					        </form>
+				       </div>
+                	
+		</div>
+	</div>	
+		<div id="topbar">
+			<label id="main_label">GOSSIP</label>
+		</div>
+		<div id="leftbar"></div>
+		<div id="rightbar"></div><br><br>
+		<div id="workspace">
+			<div id="login_tab">
+				<label id="login_label">LOGIN</label>
+			</div>
+			<div id="register_tab">
+				<label id="register_label">REGISTER</label>
+			</div>
+			<div id="login_frame">
+				<div class="credentials">
+					   <div id="username">
+							<input id="input_user" required>				       
+							<label for="username" id="label_user">USERNAME</label>
+						</div>
+					   <div id="password">
+							<input id="input_pass" required>
+							<label for="password" id="label_pass">PASSWORD</label>
+					   </div>	
+				</div>
+				<a href="dashboard.html"><input type="submit" value="SUBMIT" id="submit_btn"></a><br>
+				<label id="forgot">forgot password?</label>
+			</div>
+				<div id="register_frame">
+					
+						<div id="firstName">
+							<input type="text" id="input_firstname" class="names" required>
+							<label for="input_firstname" id="label_firstname" class="labelling">Firstname</label>
+						</div>
+						<div id="lastname">
+							<input type="text" id="input_lastname" class="names" required>
+							<label for="input_lastname" id="label_lastname"  class="labelling">Lastname</label>
+						
+				    </div>
+					<div id="email">
+						<input type="text" id="input_email" class="names" required>
+						<label for="input_email" id="label_email" class="labelling">Email</label>
+					</div>
+					<div id="newpass">
+						<input type="text" id="input_newpass" class="names" required>
+						<label for="input_newpass" id="label_newpass" class="labelling">New Password</label>
+					</div>
+					<input type="submit" value="Register" id="register_btn">
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		document.getElementById("login_tab").addEventListener('click',loginvisible);
+		document.getElementById("register_tab").addEventListener('click',registervisible);
+		function loginvisible()
+		{
+			document.getElementById("login_frame").style.display="block";
+			document.getElementById("register_frame").style.display="none";
+
+		}
+		function registervisible()
+		{
+			document.getElementById("login_frame").style.display="none";
+			document.getElementById("register_frame").style.display="block";
+		
+		}
+		document.getElementById("forgot").addEventListener('click',popup);
+	document.getElementById("close").addEventListener('click',close);
+	function popup()
+	{
+		document.querySelector(".modal").style.display="block";
+		
+	}
+	function close()
+	{
+		document.querySelector(".modal").style.display="none";
+	}
+</script>
+</body>

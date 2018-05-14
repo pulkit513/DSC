@@ -1,0 +1,248 @@
+<html>
+<head>
+	<title>ADMINDASHBOARD</title>
+	<style>
+	#container
+	{
+		background-color:#EF9A9A;
+	}
+	#menubar
+	{
+		height:8%;
+		width:100%;
+		background-color: #D50000;
+	}
+	.menu_labels
+	{
+		position: relative;
+		left:20px;
+		font-style: bold;
+		top:14px;
+	}
+	#issue_label
+	{
+		left:65px;
+	}
+	#welcome_label
+	{
+		font-size: 30px;
+		color:white;
+		position: absolute;
+		left:480px;
+		top:16px;
+		font-family: monospace;
+	}
+	#admin_label
+	{
+		left:1040px;
+	}
+	#admin_label:hover
+	{
+		cursor: pointer;
+	}
+	.menu_labels:hover,.symbols:hover
+	{
+		cursor: pointer;
+	}
+	.manage
+	{
+		width:28%;
+		height:30%;
+		position:relative;
+	}
+	.manage:hover
+	{
+		cursor: pointer;
+	}
+	#manage_category
+	{
+		background: #FF1744;
+		float:left;
+	}
+	#add_category
+	{
+		background: #F50057;
+		float:left;
+		left: 90px;
+	}
+	#manage_author
+	{
+		background: #D500F9;
+		float:right;
+	}
+	#add_author
+	{
+		top:100px;
+		background: #8E24AA;
+		float:left;
+	}
+	#manage_books
+	{
+		top:100px;
+		background: #D81B60;
+		float:left;
+		left:90px;
+	}
+	#add_books
+	{
+		top:100px;
+		background: #E53935;
+		float:right;
+	}
+	.tools
+	{
+		left:80px;
+		height:70%;
+		width:50%;
+		position: relative;
+
+	}
+	.tools_labels
+	{ 
+		position: relative;
+      font-family: Arial;
+      font-size: 25px;
+      left:80px;
+	}
+	.issue_dropdown
+	{
+		position:absolute;
+		width:20%;
+		left:120px;
+		top:40px;
+		background-color:#9C27B0;
+		display: none;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+   .dropdown_items
+   {
+   	height:20px;
+   	width:20px;
+   }
+    .dropdown_items:hover
+    {
+    	cursor:pointer;
+    }
+   .show
+   {
+   	    position:absolute;
+		
+		width:20%;
+		left:120px;
+		top:40px;
+		background-color:#9C27B0;
+		display: block;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+   .admin_dropdown
+	{
+		position:absolute;
+		width:20%;
+		left:620px;
+		top:40px;
+		background-color:#9C27B0;
+		display: none;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+    .show1
+   {
+   	    position:absolute;
+		
+		width:10%;
+		left:1220px;
+		top:40px;
+		background-color:#9C27B0;
+		display: block;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+   .links
+   {
+   	text-decoration: none;
+   	color:black;
+   }
+
+   </style>
+</head>
+<body bgcolor="#EF9A9A">
+	<div class="issue_dropdown" id="issuedropdown">
+			<img src="settings.png" class="dropdown_items">
+			<label id="manageissued" class="dropdown_items">Manage Issued Books</label><br><br>
+			<img src="add.png" class="dropdown_items">
+			<label id="manageissued" class="dropdown_items">New Book Issue</label>
+		</div>
+		<div class="admin_dropdown" id="admindropdown">
+			<a href="manageprofile.html" class="links"><img src="settings.png" class="dropdown_items">
+			<label id="manageprofile" class="dropdown_items">Manage Profile</label><br><br></a>
+			<a href="login.html" class="links"><img src="signout.png" class="dropdown_items">
+			<label id="manageissued" class="dropdown_items">Signout</label></a>
+		</div>
+	<div id ="container">
+		<div id="menubar">
+			&nbsp&nbsp<span id="homespan">
+				<img src="home.png" class="symbols" style="height:20px; width:20px; top:18px;position:absolute;">&nbsp
+				<a href="login.html" class="links"><label id="home_label" class="menu_labels">HOME</label></a>
+			</span>
+			<span id="issuebooksspan">
+				<img src="dropdown.png" class="symbols" style="height:20px; width:20px; top:18px;position:absolute; left:120px;">
+                <label id="issue_label" class="menu_labels">ISSUE BOOKS</label>
+			</span>
+			<label id="welcome_label">Welcome to Dashboard</label>
+			<span id ="admin_span">
+				<img src="username.png" class="symbols" style="height:20px; width:20px; top:18px;position:absolute; left:1200px; ">
+				<label id="admin_label" class="menu_labels">ADMIN</label>
+			</span>
+		</div><br><br>
+		
+		<a href="managecategory.html" class="links"><div id="manage_category" class="manage">
+			<img src="settings.png" class="tools"><br>
+            <label class="tools_labels">Manage Category</label>
+		</div></a>  
+		<a href="addcategory.html" class="links"><div id="add_category" class="manage">
+			<img src="add.png" class="tools"><br>
+			 <label class="tools_labels">Add Category</label>
+		</div></a>
+		<a href="manageauthors.html" class="links"><div id="manage_author" class="manage">
+			<img src="settings.png" class="tools"><br>
+			 <label class="tools_labels">Manage Author</label>
+		</div></a>
+		<a href="addauthor.html" class="links"><div id="add_author" class="manage">
+			<img src="add.png" class="tools"><br>
+			 <label class="tools_labels">Add Author</label>
+		</div></a>
+		<a href="managebooks.html" class="links"><div id="manage_books" class="manage">
+			<img src="settings.png" class="tools"><br>
+			 <label class="tools_labels">Manage Books</label>
+		</div></a>
+		<a href="addbook.html" class="links"><div id="add_books" class="manage">
+			<img src="add.png" class="tools"><br>
+			 <label class="tools_labels">Add Books</label>
+		</div></a>
+		
+	</div>
+	<script>
+		document.getElementById("issuebooksspan").addEventListener('click',drop);
+		document.getElementById("admin_span").addEventListener('click',drop1);
+
+		function drop()
+		{
+			document.getElementById("issuedropdown").classList.toggle('show');
+			document.getElementById("issuedropdown").style.height= '100px';
+			console.log("adfad");
+			
+
+		}
+		function drop1()
+		{
+			document.getElementById("admindropdown").classList.toggle('show1');
+			document.getElementById("admindropdown").style.height= '100px';
+		}
+	</script>
+	

@@ -1,0 +1,417 @@
+<html>
+<head>
+	<title>manage authors</title>
+	<style>
+	#container
+	{
+		background-color:#EF9A9A;
+	}
+	#managecategory_label
+	{
+		font-size: 30px;
+		color:white;
+		position: absolute;
+		left:480px;
+		top:16px;
+		font-family: monospace;
+	}
+	#menubar
+	{
+		height:8%;
+		width:100%;
+		background-color: #D50000;
+	}
+	.menu_labels
+	{
+		position: relative;
+		left:20px;
+		font-style: bold;
+		top:14px;
+	}
+	#issue_label
+	{
+		left:65px;
+	}
+	
+	#admin_label
+	{
+		left:1040px;
+	}
+	#admin_label:hover
+	{
+		cursor: pointer;
+	}
+	.menu_labels:hover,.symbols:hover
+	{
+		cursor: pointer;
+	}
+	.manage
+	{
+		width:28%;
+		height:30%;
+		position:relative;
+	}
+	.manage:hover
+	{
+		cursor: pointer;
+	}
+	
+	
+	.issue_dropdown
+	{
+		position:absolute;
+		width:20%;
+		left:120px;
+		top:40px;
+		background-color:#9C27B0;
+		display: none;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+   .dropdown_items
+   {
+   	height:20px;
+   	width:20px;
+   }
+    .dropdown_items:hover
+    {
+    	cursor:pointer;
+    }
+   .show
+   {
+   	    position:absolute;
+		
+		width:20%;
+		left:120px;
+		top:40px;
+		background-color:#9C27B0;
+		display: block;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+   .admin_dropdown
+	{
+		position:absolute;
+		width:20%;
+		left:620px;
+		top:40px;
+		background-color:#9C27B0;
+		display: none;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+    .show1
+   {
+   	    position:absolute;
+		
+		width:10%;
+		left:1220px;
+		top:40px;
+		background-color:#9C27B0;
+		display: block;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+   #authorlisting_label
+   {
+   	position: relative;
+   	font-size: 30px;
+   	font-family: Arial;
+   	color:white;
+   }
+   #authorlistinglabel
+   {
+   	position: relative;
+   	font-size: 25px;
+   }
+   #tabletop
+   {
+   	width:100%
+   	height:50%;
+   	background: #D50000;
+   	position: relative;
+   	}
+   	.editbuttons
+   	{
+   		width:50px;
+   		height: 25px;
+   		background: #FF5722;
+   		outline:none;
+   		border:none;
+   		color:white;
+   	}
+   	.editbuttons:hover{
+   		cursor:pointer;
+   	}
+   	.deletebuttons
+   	{
+   		width:50px;
+   		height: 25px;
+   		background: #C62828;
+   		outline:none;
+   		border:none;
+   		color:white;
+   	}
+   	.deletebuttons:hover
+   	{
+   		cursor: pointer;
+   	}
+   	.status_btn
+   	{
+   		background: #4CAF50;
+   		outline:none;
+   		border:none;
+   		color:white;
+   		width:90px;
+   		height: 25px;
+   	}
+   .status_btn:hover
+   {
+   	cursor:pointer;
+   }
+   #authortable
+   {
+   	position: relative;
+   	left:280px;
+   }
+    .links
+   {
+   	text-decoration: none;
+   	color:black;
+   }
+  
+
+
+         #dashboard_btn
+           {
+           	position: relative;
+           	float: right;
+           	width:180px;
+           	height: 30px;
+           	font-size: 15px;
+           	color:white;
+           	background: #D84315;
+           	outline:none;
+           	border:none;
+           }
+              #dashboard_btn:hover
+            {
+            	cursor:pointer;
+            }
+            #addcategory_div
+            {   
+            	position:relative;
+            	border :2px dotted gray;
+            	height:60%;
+            	width:60%;
+            	left:260px;
+            }
+            .addlabels
+            {
+            	position:relative;
+            	left:100px;
+            	color:white;
+            	font-size: 30px;
+            	font-family: monospace;
+            }
+              .addinputs
+            {
+            	position:relative;
+            	left:250px;
+            }
+            #special
+            {
+            	position: relative;
+            	left:220px;
+            }
+            #dropimg
+           {
+           	position: relative;
+           	top:-66px;
+           	left:225px;
+           }
+           #dropimg:hover
+           {
+           	cursor:pointer;
+           }
+           #categorylistdiv
+           {
+           	display:none;
+           	position:relative;
+           	background:#FFCCBC;
+           	width:21%;
+           	top:-90px;
+           	left:367px;
+           }
+           .labeldivs:hover
+           {
+             background: #FF5722;
+             width:100%;
+             cursor:pointer;
+           }
+           #add_btn
+           {
+           	position: relative;
+           	top:80px;
+           	width:120px;
+           	height:50px;
+           	font-size: 20px;
+           	color:white;
+           	background: #E57373;
+           	outline:none;
+           	border:none;
+           }
+            #add_btn:hover
+           {
+           	cursor:pointer;
+           	background: #C62828;
+           }
+          </style>
+</head>
+<body bgcolor="#EF9A9A">
+	<div class="issue_dropdown" id="issuedropdown">
+			<img src="settings.png" class="dropdown_items">
+			<label id="manageissued" class="dropdown_items">Manage Issued Books</label><br><br>
+			<img src="add.png" class="dropdown_items">
+			<label id="manageissued" class="dropdown_items">New Book Issue</label>
+		</div>
+		<div class="admin_dropdown" id="admindropdown">
+			<img src="settings.png" class="dropdown_items">
+			<a href="manageprofile.html" class="links"><label id="manageprofile" class="dropdown_items">Manage Profile</label><br><br></a>
+			<a href="login.html" class="links"><img src="signout.png" class="dropdown_items">
+			<label id="manageissued" class="dropdown_items">Signout</label></a>
+		</div>
+	<div id ="container">
+		
+		<div id="menubar">
+			&nbsp&nbsp<span id="homespan">
+				<a href="login.html" class="links"><img src="home.png" class="symbols" style="height:20px; width:20px; top:18px;position:absolute;">&nbsp
+				<label id="home_label" class="menu_labels">HOME</label></a>
+			</span>
+			<span id="issuebooksspan">
+				<img src="dropdown.png" class="symbols" style="height:20px; width:20px; top:18px;position:absolute; left:120px;">
+                <label id="issue_label" class="menu_labels">ISSUE BOOKS</label>
+			</span>
+			<label id="managecategory_label">Add Category</label>
+			<span id ="admin_span">
+				<img src="username.png" class="symbols" style="height:20px; width:20px; top:18px;position:absolute; left:1200px; ">
+				<label id="admin_label" class="menu_labels">ADMIN</label>
+			</span>
+		</div><br><br>
+		<label id="authorlisting_label">Add Category</label>
+		<a href="admindashboard.html"><button type="button" id="dashboard_btn">Back To Dashboard</button></a>
+		<hr noshade="1.5"><br><br>
+		<div id="addcategory_div"><br><br><br>
+			<label class="addlabels">Category:</label><input class="addinputs" type="text" id="special"><br><br><br>
+			<label class="addlabels">Parent:</label><input class="addinputs" id="parent_input" type="text"><br><br><br>
+			<label class="addlabels">Status:</label><input class="addinputs" type="text" id="staus_input">
+			<img src="dropimg.png" height="20px" width=20px id="dropimg">
+			<div id="categorylistdiv">
+				<ul type="disc">
+				<div class="labeldivs" id="1"><li><label class="list_labels">Arts</label><br><br></li></div>
+				<div class="labeldivs" id="2"><li><label  class="list_labels">Engineering</label><br><br></li></div>
+				<div class="labeldivs" id="3"><li><label class="list_labels">Fiction</label><br><br></li></div>
+				<div class="labeldivs" id="4"><li><label class="list_labels">Science</label><br><br></li></div>
+				<div class="labeldivs" id="5"><li><label class="list_labels">Management</label><br><br></li></div>
+				<div class="labeldivs" id="6"><li><label class="list_labels">Commerce</label><br><br></li></div>
+				<div class="labeldivs" id="7"><li><label class="list_labels">General Knowledge</label><br><br></li></div>
+               </ul>
+			
+		</div>
+			<button type="button" id="add_btn">Add Category</button>
+			
+	
+	</div>
+
+
+
+		<script>
+		document.getElementById("issuebooksspan").addEventListener('click',drop);
+		document.getElementById("admin_span").addEventListener('click',drop1);
+
+		function drop()
+		{
+			document.getElementById("issuedropdown").classList.toggle('show');
+			document.getElementById("issuedropdown").style.height= '100px';
+			console.log("adfad");
+			
+
+		}
+		function drop1()
+		{
+			document.getElementById("admindropdown").classList.toggle('show1');
+			document.getElementById("admindropdown").style.height= '100px';
+		}
+          
+          document.getElementById("dropimg").addEventListener('click',showlist);
+          function showlist()
+          {   
+          	if( document.getElementById("categorylistdiv").style.display=="block")
+          	{
+          		 document.getElementById("categorylistdiv").style.display="none";
+          	 
+          	}
+          	else
+          	{
+          		document.getElementById("categorylistdiv").style.display="block";
+          	}
+          }
+
+
+
+
+
+
+
+
+		//fetch category
+		document.getElementById("1").addEventListener('click',f1);
+		document.getElementById("2").addEventListener('click',f2);
+		document.getElementById("3").addEventListener('click',f3);
+		document.getElementById("4").addEventListener('click',f4);
+		document.getElementById("5").addEventListener('click',f5);
+		document.getElementById("6").addEventListener('click',f6);
+		document.getElementById("7").addEventListener('click',f7);
+
+		function f1()
+		{
+			document.getElementById("parent_input").value=document.getElementById("1").firstChild.firstChild.innerHTML;
+			 document.getElementById("categorylistdiv").style.display="none";
+		}
+		function f2()
+		{
+			document.getElementById("parent_input").value=document.getElementById("2").firstChild.firstChild.innerHTML;
+			 document.getElementById("categorylistdiv").style.display="none";
+		}
+		function f3()
+		{
+			document.getElementById("parent_input").value=document.getElementById("3").firstChild.firstChild.innerHTML;
+			 document.getElementById("categorylistdiv").style.display="none";
+		}
+		function f4()
+		{
+			document.getElementById("parent_input").value=document.getElementById("4").firstChild.firstChild.innerHTML;
+			 document.getElementById("categorylistdiv").style.display="none";
+		}
+		function f5()
+		{
+			document.getElementById("parent_input").value=document.getElementById("5").firstChild.firstChild.innerHTML;
+			 document.getElementById("categorylistdiv").style.display="none";
+		}
+		function f6()
+		{
+			document.getElementById("parent_input").value=document.getElementById("6").firstChild.firstChild.innerHTML;
+			 document.getElementById("categorylistdiv").style.display="none";
+		}
+		function f7()
+		{
+			document.getElementById("parent_input").value=document.getElementById("7").firstChild.firstChild.innerHTML;
+			 document.getElementById("categorylistdiv").style.display="none";
+		}
+
+		
+	</script>

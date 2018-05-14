@@ -1,0 +1,476 @@
+<html>
+<head>
+	<title>manage category</title>
+	<style>
+	#container
+	{
+		background-color:#EF9A9A;
+	}
+	#managecategory_label
+	{
+		font-size: 30px;
+		color:white;
+		position: absolute;
+		left:480px;
+		top:16px;
+		font-family: monospace;
+	}
+	#menubar
+	{
+		height:8%;
+		width:100%;
+		background-color: #D50000;
+	}
+	.menu_labels
+	{
+		position: relative;
+		left:20px;
+		font-style: bold;
+		top:14px;
+	}
+	#issue_label
+	{
+		left:65px;
+	}
+	
+	#admin_label
+	{
+		left:1040px;
+	}
+	#admin_label:hover
+	{
+		cursor: pointer;
+	}
+	.menu_labels:hover,.symbols:hover
+	{
+		cursor: pointer;
+	}
+	.manage
+	{
+		width:28%;
+		height:30%;
+		position:relative;
+	}
+	.manage:hover
+	{
+		cursor: pointer;
+	}
+	
+	
+	.issue_dropdown
+	{
+		position:absolute;
+		width:20%;
+		left:120px;
+		top:40px;
+		background-color:#9C27B0;
+		display: none;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+   .dropdown_items
+   {
+   	height:20px;
+   	width:20px;
+   }
+    .dropdown_items:hover
+    {
+    	cursor:pointer;
+    }
+   .show
+   {
+   	    position:absolute;
+		
+		width:20%;
+		left:120px;
+		top:40px;
+		background-color:#9C27B0;
+		display: block;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+   .admin_dropdown
+	{
+		position:absolute;
+		width:20%;
+		left:620px;
+		top:40px;
+		background-color:#9C27B0;
+		display: none;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+    .show1
+   {
+   	    position:absolute;
+		
+		width:10%;
+		left:1220px;
+		top:40px;
+		background-color:#9C27B0;
+		display: block;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+   #categorylisting_label
+   {
+   	position: relative;
+   	font-size: 30px;
+   	font-family: Arial;
+   	color:white;
+   }
+   #categorylistinglabel
+   {
+   	position: relative;
+   	font-size: 25px;
+   }
+   #tabletop
+   {
+   	width:100%
+   	height:50%;
+   	background: #D50000;
+   	position: relative;
+   	}
+   	.editbuttons
+   	{
+   		width:50px;
+   		height: 25px;
+   		background: #FF5722;
+   		outline:none;
+   		border:none;
+   		color:white;
+   	}
+   	.editbuttons:hover{
+   		cursor:pointer;
+   	}
+   	.deletebuttons
+   	{
+   		width:50px;
+   		height: 25px;
+   		background: #C62828;
+   		outline:none;
+   		border:none;
+   		color:white;
+   	}
+   	.deletebuttons:hover
+   	{
+   		cursor: pointer;
+   	}
+   	.status_btn
+   	{
+   		background: #4CAF50;
+   		outline:none;
+   		border:none;
+   		color:white;
+   		width:90px;
+   		height: 25px;
+   	}
+   .status_btn:hover
+   {
+   	cursor:pointer;
+   }
+   #categorytable
+   {
+   	position: relative;
+   	left:280px;
+   }
+    .links
+   {
+   	text-decoration: none;
+   	color:black;
+   }
+   table {
+           
+           font-family: Helvetica, Arial, sans-serif;
+           width: 840px;
+           border-collapse:collapse;
+          
+          }
+          tr td
+          { 
+          	position: relative;
+          	padding-top:10px;
+          	padding-bottom:10px;
+          }
+
+          td, th {
+			border: 1px solid ; 
+			height: 30px;
+			
+                 }
+
+			th {
+			background: #DFDFDF;
+			font-weight: bold;
+			}
+
+			td {
+			
+			text-align: center;
+			}
+
+
+          tr:nth-child(even) td { background: #F1F1F1; }
+
+ 
+           tr:nth-child(odd) td { background: #FEFEFE; }
+
+           #dashboard_btn
+           {
+           	position: relative;
+           	float: right;
+           	width:180px;
+           	height: 30px;
+           	font-size: 15px;
+           	color:white;
+           	background: #D84315;
+           	outline:none;
+           	border:none;
+           }
+            #dashboard_btn:hover
+            {
+            	cursor:pointer;
+            }
+
+
+  
+</style>
+</head>
+<body bgcolor="#EF9A9A">
+	<div class="issue_dropdown" id="issuedropdown">
+			<img src="settings.png" class="dropdown_items">
+			<label id="manageissued" class="dropdown_items">Manage Issued Books</label><br><br>
+			<img src="add.png" class="dropdown_items">
+			<label id="manageissued" class="dropdown_items">New Book Issue</label>
+		</div>
+		<div class="admin_dropdown" id="admindropdown">
+			<img src="settings.png" class="dropdown_items">
+			<a href="manageprofile.html" class="links"><label id="manageprofile" class="dropdown_items">Manage Profile</label><br><br></a>
+			<a href="login.html" class="links"><img src="signout.png" class="dropdown_items">
+			<label id="manageissued" class="dropdown_items">Signout</label></a>
+		</div>
+	<div id ="container">
+		
+		<div id="menubar">
+			&nbsp&nbsp<span id="homespan">
+				<a href="login.html" class="links"><img src="home.png" class="symbols" style="height:20px; width:20px; top:18px;position:absolute;">&nbsp
+				<label id="home_label" class="menu_labels">HOME</label></a>
+			</span>
+			<span id="issuebooksspan">
+				<img src="dropdown.png" class="symbols" style="height:20px; width:20px; top:18px;position:absolute; left:120px;">
+                <label id="issue_label" class="menu_labels">ISSUE BOOKS</label>
+			</span>
+			<label id="managecategory_label">Manage Category</label>
+			<span id ="admin_span">
+				<img src="username.png" class="symbols" style="height:20px; width:20px; top:18px;position:absolute; left:1200px; ">
+				<label id="admin_label" class="menu_labels">ADMIN</label>
+			</span>
+		</div><br><br>
+		<label id="categorylisting_label">Category Listing</label>
+		<a href="admindashboard.html"><button type="button" id="dashboard_btn">Back To Dashboard</button></a>
+		<hr noshade="1.5"><br><br>
+			<div id="tabletop">
+				<img src="settings.png" height="25px" width="25px" style="top:4px;position: relative;">
+				<label id="categorylistinglabel">Category Listing</label>
+			</div><br><br>
+			<div id="categorytable">
+				<table>
+					<tr>
+						<th>Category Name</th>
+						<th>No. of Books</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+					<tr>
+						<td>Arts</td>
+						<td>2456</td>
+						<td><button type="button" class="status_btn" onclick="changestatus0()">Available</button></td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr>
+						<td>Engineering</td>
+						<td>5034</td>
+						<td><button type="button" class="status_btn" onclick="changestatus1()">Available</button></td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr>
+						<td>Fiction</td>
+						<td>2099</td>
+						<td><button type="button" class="status_btn" onclick="changestatus2()">Available</button></td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr>
+						<td>Science</td>
+						<td>6098</td>
+						<td><button type="button" class="status_btn" onclick="changestatus3()">Available</button></td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr>
+						<td>Management</td>
+						<td>1234</td>
+						<td><button type="button" class="status_btn" onclick="changestatus4()">Available</button></td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr>
+						<td>Commerce</td>
+						<td>3200</td>
+						<td><button type="button" class="status_btn" onclick="changestatus5()">Available</button></td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr>
+						<td>General Knowledge</td>
+						<td>500</td>
+						<td><button type="button" class="status_btn" onclick="changestatus6()">Available</button></td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+				</table>
+			</div>
+			
+	
+	</div>
+
+
+
+		<script>
+		document.getElementById("issuebooksspan").addEventListener('click',drop);
+		document.getElementById("admin_span").addEventListener('click',drop1);
+
+		function drop()
+		{
+			document.getElementById("issuedropdown").classList.toggle('show');
+			document.getElementById("issuedropdown").style.height= '100px';
+			console.log("adfad");
+			
+
+		}
+		function drop1()
+		{
+			document.getElementById("admindropdown").classList.toggle('show1');
+			document.getElementById("admindropdown").style.height= '100px';
+		}
+
+		function changestatus0()
+		{   
+			
+			if(document.getElementsByClassName("status_btn")[0].innerHTML=="Available")
+			{
+				document.getElementsByClassName("status_btn")[0].style.background="#B71C1C";
+				document.getElementsByClassName("status_btn")[0].innerHTML="Unavailable";
+			}
+			else
+			{   
+				document.getElementsByClassName("status_btn")[0].style.background="#4CAF50";
+				document.getElementsByClassName("status_btn")[0].innerHTML="Available";
+			}
+			
+		}
+		function changestatus1()
+		{   
+			
+			if(document.getElementsByClassName("status_btn")[1].innerHTML=="Available")
+			{
+				document.getElementsByClassName("status_btn")[1].style.background="#B71C1C";
+				document.getElementsByClassName("status_btn")[1].innerHTML="Unavailable";
+			}
+			else
+			{   
+				document.getElementsByClassName("status_btn")[1].style.background="#4CAF50";
+				document.getElementsByClassName("status_btn")[1].innerHTML="Available";
+			}
+			
+		}
+		function changestatus2()
+		{   
+			
+			if(document.getElementsByClassName("status_btn")[2].innerHTML=="Available")
+			{
+				document.getElementsByClassName("status_btn")[2].style.background="#B71C1C";
+				document.getElementsByClassName("status_btn")[2].innerHTML="Unavailable";
+			}
+			else
+			{   
+				document.getElementsByClassName("status_btn")[2].style.background="#4CAF50";
+				document.getElementsByClassName("status_btn")[2].innerHTML="Available";
+			}
+			
+		}
+		function changestatus3()
+		{   
+			
+			if(document.getElementsByClassName("status_btn")[3].innerHTML=="Available")
+			{
+				document.getElementsByClassName("status_btn")[3].style.background="#B71C1C";
+				document.getElementsByClassName("status_btn")[3].innerHTML="Unavailable";
+			}
+			else
+			{   
+				document.getElementsByClassName("status_btn")[3].style.background="#4CAF50";
+				document.getElementsByClassName("status_btn")[3].innerHTML="Available";
+			}
+			
+		}
+		function changestatus4()
+		{   
+			
+			if(document.getElementsByClassName("status_btn")[4].innerHTML=="Available")
+			{
+				document.getElementsByClassName("status_btn")[4].style.background="#B71C1C";
+				document.getElementsByClassName("status_btn")[4].innerHTML="Unavailable";
+			}
+			else
+			{   
+				document.getElementsByClassName("status_btn")[4].style.background="#4CAF50";
+				document.getElementsByClassName("status_btn")[4].innerHTML="Available";
+			}
+			
+		}
+		function changestatus5()
+		{   
+			
+			if(document.getElementsByClassName("status_btn")[5].innerHTML=="Available")
+			{
+				document.getElementsByClassName("status_btn")[5].style.background="#B71C1C";
+				document.getElementsByClassName("status_btn")[5].innerHTML="Unavailable";
+			}
+			else
+			{   
+				document.getElementsByClassName("status_btn")[5].style.background="#4CAF50";
+				document.getElementsByClassName("status_btn")[5].innerHTML="Available";
+			}
+			
+		}
+		function changestatus6()
+		{   
+			
+			if(document.getElementsByClassName("status_btn")[6].innerHTML=="Available")
+			{
+				document.getElementsByClassName("status_btn")[6].style.background="#B71C1C";
+				document.getElementsByClassName("status_btn")[6].innerHTML="Unavailable";
+			}
+			else
+			{   
+				document.getElementsByClassName("status_btn")[6].style.background="#4CAF50";
+				document.getElementsByClassName("status_btn")[6].innerHTML="Available";
+			}
+			
+		}
+		function changestatus7()
+		{   
+			
+			if(document.getElementsByClassName("status_btn")[7].innerHTML=="Available")
+			{
+				document.getElementsByClassName("status_btn")[7].style.background="#B71C1C";
+				document.getElementsByClassName("status_btn")[7].innerHTML="Unavailable";
+			}
+			else
+			{   
+				document.getElementsByClassName("status_btn")[7].style.background="#4CAF50";
+				document.getElementsByClassName("status_btn")[7].innerHTML="Available";
+			}
+			
+		}
+	</script>

@@ -1,0 +1,557 @@
+<html>
+<head>
+	<title>manage category</title>
+	<style>
+	#container
+	{
+		background-color:#EF9A9A;
+	}
+	#managecategory_label
+	{
+		font-size: 30px;
+		color:white;
+		position: absolute;
+		left:480px;
+		top:16px;
+		font-family: monospace;
+	}
+	#menubar
+	{
+		height:8%;
+		width:100%;
+		background-color: #D50000;
+	}
+	.menu_labels
+	{
+		position: relative;
+		left:20px;
+		font-style: bold;
+		top:14px;
+	}
+	#issue_label
+	{
+		left:65px;
+	}
+	
+	#admin_label
+	{
+		left:1040px;
+	}
+	#admin_label:hover
+	{
+		cursor: pointer;
+	}
+	.menu_labels:hover,.symbols:hover
+	{
+		cursor: pointer;
+	}
+	.manage
+	{
+		width:28%;
+		height:30%;
+		position:relative;
+	}
+	.manage:hover
+	{
+		cursor: pointer;
+	}
+	
+	
+	.issue_dropdown
+	{
+		position:absolute;
+		width:20%;
+		left:120px;
+		top:40px;
+		background-color:#9C27B0;
+		display: none;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+   .dropdown_items
+   {
+   	height:20px;
+   	width:20px;
+   }
+    .dropdown_items:hover
+    {
+    	cursor:pointer;
+    }
+   .show
+   {
+   	    position:absolute;
+		
+		width:20%;
+		left:120px;
+		top:40px;
+		background-color:#9C27B0;
+		display: block;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+   .admin_dropdown
+	{
+		position:absolute;
+		width:20%;
+		left:620px;
+		top:40px;
+		background-color:#9C27B0;
+		display: none;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+    .show1
+   {
+   	    position:absolute;
+		
+		width:10%;
+		left:1220px;
+		top:40px;
+		background-color:#9C27B0;
+		display: block;
+		transition: 0.5s ease all;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+   }
+   #categorylisting_label
+   {
+   	position: relative;
+   	font-size: 30px;
+   	font-family: Arial;
+   	color:white;
+   }
+   #categorylistinglabel
+   {
+   	position: relative;
+   	font-size: 25px;
+   }
+   #tabletop
+   {
+   	width:100%
+   	height:50%;
+   	background: #D50000;
+   	position: relative;
+   	}
+   	.editbuttons
+   	{
+   		width:50px;
+   		height: 25px;
+   		background: #FF5722;
+   		outline:none;
+   		border:none;
+   		color:white;
+   	}
+   	.editbuttons:hover{
+   		cursor:pointer;
+   	}
+   	.deletebuttons
+   	{
+   		width:50px;
+   		height: 25px;
+   		background: #C62828;
+   		outline:none;
+   		border:none;
+   		color:white;
+   	}
+   	.deletebuttons:hover
+   	{
+   		cursor: pointer;
+   	}
+   	.status_btn
+   	{
+   		background: #4CAF50;
+   		outline:none;
+   		border:none;
+   		color:white;
+   		width:90px;
+   		height: 25px;
+   	}
+   .status_btn:hover
+   {
+   	cursor:pointer;
+   }
+   #bookstable
+   {
+   	position: relative;
+   	left:280px;
+   	
+   	overflow-y:scroll;
+   	   }
+    .links
+   {
+   	text-decoration: none;
+   	color:black;
+   }
+   #search
+   {
+   	position: relative;
+   	left:350px;
+   }
+   table {
+           
+           font-family: Helvetica, Arial, sans-serif;
+           width: 840px;
+           border-collapse:collapse;
+          
+          }
+          tr td
+          { 
+          	position: relative;
+          	padding-top:10px;
+          	padding-bottom:10px;
+          }
+
+          td, th {
+			border: 1px solid ; 
+			height: 30px;
+			
+                 }
+
+			th {
+			background: #DFDFDF;
+			font-weight: bold;
+			}
+
+			td {
+			
+			text-align: center;
+			}
+
+
+          tr:nth-child(even) td { background: #F1F1F1; }
+
+ 
+           tr:nth-child(odd) td { background: #FEFEFE; }
+
+           #dashboard_btn
+           {
+           	position: relative;
+           	float: right;
+           	width:180px;
+           	height: 30px;
+           	font-size: 15px;
+           	color:white;
+           	background: #D84315;
+           	outline:none;
+           	border:none;
+           }
+            #dashboard_btn:hover
+            {
+            	cursor:pointer;
+            }
+            #search_label
+            {
+            	font-size: 30px;
+            }
+            .searchlabels
+            {
+            	position:relative;
+            	left:-170px;
+            	transition: 0.5s ease all;
+            	pointer-events: none;
+            	color:white;
+            	font-size: 30px;
+            }
+            
+            .searchfields
+            {
+            	height:30px;
+            	outline:none;
+            	border:none;
+            	background:#EF9A9A;
+            	border-bottom: 2px solid green;
+            	transition: 0.5s ease all;
+            }
+            .searchfields:focus+.searchlabels, .searchfields:valid+.searchlabels
+            {
+            	top:-20px;
+            	font-size:15px;
+            }
+            #search_btn
+            {
+            	height:30px;
+            	width:100px;
+            	background:#D84315;
+            	border:none;
+            	outline:none;
+            }
+             #search_btn:hover
+             {
+             	cursor:pointer;
+             }
+
+
+  
+</style>
+</head>
+<body bgcolor="#EF9A9A">
+	<div class="issue_dropdown" id="issuedropdown">
+			<img src="settings.png" class="dropdown_items">
+			<label id="manageissued" class="dropdown_items">Manage Issued Books</label><br><br>
+			<img src="add.png" class="dropdown_items">
+			<label id="manageissued" class="dropdown_items">New Book Issue</label>
+		</div>
+		<div class="admin_dropdown" id="admindropdown">
+			<img src="settings.png" class="dropdown_items">
+			<a href="manageprofile.html" class="links"><label id="manageprofile" class="dropdown_items">Manage Profile</label><br><br></a>
+			<a href="login.html" class="links"><img src="signout.png" class="dropdown_items">
+			<label id="manageissued" class="dropdown_items">Signout</label></a>
+		</div>
+	<div id ="container">
+		
+		<div id="menubar">
+			&nbsp&nbsp<span id="homespan">
+				<a href="login.html" class="links"><img src="home.png" class="symbols" style="height:20px; width:20px; top:18px;position:absolute;">&nbsp
+				<label id="home_label" class="menu_labels">HOME</label></a>
+			</span>
+			<span id="issuebooksspan">
+				<img src="dropdown.png" class="symbols" style="height:20px; width:20px; top:18px;position:absolute; left:120px;">
+                <label id="issue_label" class="menu_labels">ISSUE BOOKS</label>
+			</span>
+			<label id="managecategory_label">Manage Books</label>
+			<span id ="admin_span">
+				<img src="username.png" class="symbols" style="height:20px; width:20px; top:18px;position:absolute; left:1200px; ">
+				<label id="admin_label" class="menu_labels">ADMIN</label>
+			</span>
+		</div><br><br>
+		<label id="categorylisting_label">View Books</label>
+		<a href="admindashboard.html"><button type="button" id="dashboard_btn">Back To Dashboard</button></a>
+		<hr noshade="1.5"><br><br>
+			<div id="tabletop">
+				<img src="settings.png" height="25px" width="25px" style="top:4px;position: relative;">
+				<label id="categorylistinglabel">Books Listing</label>
+			</div><br><br>
+			<div id= "search">
+			<div id="searcharea">
+				<span> <input type="text" class="searchfields" id="req_book" required><label class="searchlabels">Book Name:</label>
+				<span><input type="text" class="searchfields" id="req_author" required><label class="searchlabels">Author Name:</label>
+				<button type="button" id="search_btn" onclick="search()">Search</button>
+			</div><br><br>
+			<div id="searchresults">
+				<label id="search_label">Search Results:</label><br><br>
+				 <input type="text" class="searchfields" id="book_result"  required><label class="searchlabels">Book Name</label>
+				<input type="text" class="searchfields" id="author_result" required ><label class="searchlabels">Author Name</label>
+				<input type="text" class="searchfields" id="copies_result" required><label class="searchlabels">No. Of Copies</label>
+			</div><br><br></div>
+			<div id="bookstable">
+				<table>
+					<tr>
+						<th>Book Name</th>
+						<th>No. of Copies</th>
+						<th>Author</th>
+						<th>Action</th>
+					</tr>
+					<tr id="1">
+						<td>The Hunger Games</td>
+						<td>5</td>
+						<td>Suzanne Collins  </td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr >
+					<tr id="2">
+						<td>Harry Potter and the Order of the Phoenix</td>
+						<td>6</td>
+						<td>J.K. Rowling</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="3">
+						<td>To Kill a Mockingbird</td>
+						<td>4</td>
+						<td>Harper Lee</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="4">
+						<td>Pride and Prejudice</td>
+						<td>6</td>
+						<td>Jane Austen</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="5">
+						<td>Twilight</td>
+						<td>12</td>
+						<td>Stephenie Meyer</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="6">
+						<td>The Universe in a Nutshell</td>
+						<td>32</td>
+						<td>Stephen Hawking</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="7">
+						<td>The Feynman Lectures on Physics</td>
+						<td>5</td>
+						<td>Richard Feynman</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="8">
+						<td>Cosmos</td>
+						<td>5</td>
+						<td>Carl Sagan</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="9">
+						<td>The Selfish Gene</td>
+						<td>5</td>
+						<td>Richard Dawkins</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="10">
+						<td>The Art of Startup Fundraising</td>
+						<td>3</td>
+						<td>Alejandro Cremades</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="11">
+						<td>Rise of the Robots</td>
+						<td>7</td>
+						<td>Martin Ford</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="12">
+						<td>Superintelligence</td>
+						<td>4</td>
+						<td>Nick Bostrom</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="13"> 
+						<td>Make Your Own Neural Network</td>
+						<td>5</td>
+						<td>Michael Taylor</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="14">
+						<td>Influencer</td>
+						<td>3</td>
+						<td>Kerry Patterson</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="15">
+						<td>Crucial Conversations</td>
+						<td>5</td>
+						<td>Kerry Patterson</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="16">
+						<td>The Leadership Challenge</td>
+						<td>5</td>
+						<td>James M. Kouzes</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="17">
+						<td>A Splendid Exchange</td>
+						<td>5</td>
+						<td>William J. Bernstein</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="18">
+						<td>eBay for Dummies</td>
+						<td>2</td>
+						<td>Marsha Collier</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="19">
+						<td>The Lean Startup</td>
+						<td>6</td>
+						<td>Eric Ries</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="20">
+						<td>The Da VinciCode</td>                         
+						<td>5</td>
+						<td>Dan Brown</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="21">
+						<td>The Great Gatsby</td>
+						<td>5</td>
+						<td>F.Scott Fitzgerald</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="22">
+						<td>The Guide</td>
+						<td>5</td>
+						<td>R K Narayan</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					<tr id="23">
+						<td>Lord of flies</td>
+   						<td>5</td>
+						<td>William Golding</td>
+						<td><button type="button"  class="editbuttons">Edit</button> <button type="button"  class="deletebuttons">Delete</button></td>
+					</tr>
+					
+				</table>
+			</div>
+			
+	
+	</div>
+
+
+
+		<script>
+		document.getElementById("issuebooksspan").addEventListener('click',drop);
+		document.getElementById("admin_span").addEventListener('click',drop1);
+
+		function drop()
+		{
+			document.getElementById("issuedropdown").classList.toggle('show');
+			document.getElementById("issuedropdown").style.height= '100px';
+			
+
+		}
+		function drop1()
+		{
+			document.getElementById("admindropdown").classList.toggle('show1');
+			document.getElementById("admindropdown").style.height= '100px';
+		}
+		//search results
+		var reqbook=document.getElementById("req_book").value;
+		var reqauthor=document.getElementById("req_author").value;
+		function search()
+		{    
+		 var reqbook=document.getElementById("req_book").value;
+		var reqauthor=document.getElementById("req_author").value;
+		 console.log(reqbook);
+		  console.log(reqauthor);
+		
+			
+			for(i=1;i<=23;i++)
+			{
+
+				var x=document.getElementById(i);
+				
+				var book=x.childNodes[1].innerHTML;
+                   console.log(book);
+                
+
+				var copies=x.childNodes[3].innerHTML;
+				console.log(copies);
+				var author=x.childNodes[5].innerHTML;
+				console.log(author);
+				if(reqbook==book||reqauthor==author)
+				{
+					document.getElementById("book_result").value=book;
+					document.getElementById("copies_result").value=copies;
+					document.getElementById("author_result").value=author;
+				
+					alert("found");
+					break;
+                    
+				}
+				else
+				{
+					document.getElementById("book_result").value="NA";
+					document.getElementById("copies_result").value="NA";
+					document.getElementById("author_result").value="NA";
+					
+				}
+			}
+		}
+
+		
+			
+		
+	</script>
